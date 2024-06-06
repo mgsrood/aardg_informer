@@ -184,5 +184,3 @@ try:
 except Exception as e:
     error_message = f"Fout bij het uploaden naar BigQuery: {str(e)}"
     send_email(recipient_mail, smtp_server, smtp_port, sender_email, sender_password, error_message)
-
-# Test
