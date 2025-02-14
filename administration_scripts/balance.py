@@ -29,7 +29,7 @@ def main():
     project_id_2 = os.environ.get('BALANCE_PROJECT_ID')
     dataset_id = os.environ.get('BALANCE_DATASET_ID')
     table_id = os.environ.get('BALANCE_TABLE_ID')
-
+    
     # GCP variabelen
     gc_keys = os.getenv("AARDG_GOOGLE_CREDENTIALS")
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gc_keys

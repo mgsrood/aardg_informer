@@ -106,7 +106,7 @@ def get_purchase_dataframe(api_url, Apikey, Securitycode):
 
             # Controleer of er nog aankopen zijn, anders stop de loop
             if not purchase_data.get('purchase'):  
-                logging.warning("Er zijn geen aankopen meer om te verwerken.")
+                logging.info("Er zijn geen aankopen meer om te verwerken.")
                 break
 
             # Verwerk de data
@@ -191,7 +191,7 @@ def get_sales_dataframe(api_url, Apikey, Securitycode):
 
             # Controleer of er nog facturen zijn, anders stop de loop
             if not sales_data.get('sales'):
-                logging.warning("Er zijn geen facturen meer om te verwerken.")
+                logging.info("Er zijn geen facturen meer om te verwerken.")
                 break
 
             # Verwerk de sales-data
@@ -277,7 +277,7 @@ def get_hour_dataframe(api_url, Apikey, Securitycode):
 
             # Controleer of er nog facturen zijn, anders stop de loop
             if not sales_data.get('sales'):
-                logging.warning("Er zijn geen facturen meer om te verwerken.")
+                logging.info("Er zijn geen facturen meer om te verwerken.")
                 break
 
             # Verwerk de sales-data
