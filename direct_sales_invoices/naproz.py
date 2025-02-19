@@ -37,7 +37,7 @@ for page in range(2):
     sales_url = api_url + sales_endpoint + str(page)
 
     # Make the GET request to the API with headers
-    sales_response = requests.get(sales_url, headers=headers)
+    sales_response = requests.get(sales_url, headers=headers, timeout=120)
 
     # Check if the response status code is 200 (OK)
     if sales_response.status_code == 200:
@@ -70,7 +70,7 @@ relation_endpoint = "relations/?records=1000"
 relation_url = api_url + relation_endpoint
 
 # Make the GET request to the API with headers
-relation_response = requests.get(relation_url, headers=headers)
+relation_response = requests.get(relation_url, headers=headers, timeout=120)
 
 if relation_response.status_code == 200:
     relation_data = relation_response.json()

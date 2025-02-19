@@ -17,7 +17,7 @@ def get_balance_sheet_dataframe(api_url, Apikey, Securitycode, jaar):
 
     # Make the GET request to the API with headers
     try:
-        ledgers_response = requests.get(ledgers_url, headers=headers)
+        ledgers_response = requests.get(ledgers_url, headers=headers, timeout=120)
     except requests.exceptions.RequestException as e:
         logging.error(f"Error: {e}")
 
@@ -44,7 +44,7 @@ def get_balance_sheet_dataframe(api_url, Apikey, Securitycode, jaar):
 
         # Maak de GET request naar de API
         try:
-            ledger_response = requests.get(ledger_url, headers=headers)
+            ledger_response = requests.get(ledger_url, headers=headers, timeout=120)
         except requests.exceptions.RequestException as e:
             logging.error(f"Error: {e}")
 
@@ -98,7 +98,7 @@ def get_purchase_dataframe(api_url, Apikey, Securitycode):
         purchase_url = api_url + purchase_endpoint + str(page)
 
         # Voer de API-aanroep uit met headers
-        purchase_response = requests.get(purchase_url, headers=headers)
+        purchase_response = requests.get(purchase_url, headers=headers, timeout=120)
 
         # Controleer of de response succesvol is
         if purchase_response.status_code == 200:
@@ -141,7 +141,7 @@ def get_purchase_dataframe(api_url, Apikey, Securitycode):
     relation_url = api_url + relation_endpoint
 
     # Make the GET request to the API with headers
-    relation_response = requests.get(relation_url, headers=headers)
+    relation_response = requests.get(relation_url, headers=headers, timeout=120)
 
     if relation_response.status_code == 200:
         relation_data = relation_response.json()
@@ -183,7 +183,7 @@ def get_sales_dataframe(api_url, Apikey, Securitycode):
         sales_url = api_url + sales_endpoint + str(page)
 
         # Make the GET request to the API with headers
-        sales_response = requests.get(sales_url, headers=headers)
+        sales_response = requests.get(sales_url, headers=headers, timeout=120)
 
         # Check if the response status code is 200 (OK)
         if sales_response.status_code == 200:
@@ -227,7 +227,7 @@ def get_sales_dataframe(api_url, Apikey, Securitycode):
     relation_url = api_url + relation_endpoint
 
     # Make the GET request to the API with headers
-    relation_response = requests.get(relation_url, headers=headers)
+    relation_response = requests.get(relation_url, headers=headers, timeout=120)
 
     if relation_response.status_code == 200:
         relation_data = relation_response.json()
@@ -269,7 +269,7 @@ def get_hour_dataframe(api_url, Apikey, Securitycode):
         sales_url = api_url + sales_endpoint + str(page)
 
         # Make the GET request to the API with headers
-        sales_response = requests.get(sales_url, headers=headers)
+        sales_response = requests.get(sales_url, headers=headers, timeout=120)
 
         # Check if the response status code is 200 (OK)
         if sales_response.status_code == 200:
@@ -329,7 +329,7 @@ def get_hour_dataframe(api_url, Apikey, Securitycode):
     relation_url = api_url + relation_endpoint
 
     # Make the GET request to the API with headers
-    relation_response = requests.get(relation_url, headers=headers)
+    relation_response = requests.get(relation_url, headers=headers, timeout=120)
 
     if relation_response.status_code == 200:
         relation_data = relation_response.json()
